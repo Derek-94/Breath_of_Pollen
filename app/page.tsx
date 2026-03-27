@@ -76,7 +76,6 @@ function findOverallPollenLevel(plantInfo: PlantInfo[]): PollenLevel {
 export default function WeatherApp() {
   const [activeTab, setActiveTab] = useState<"today" | "weekly" | "settings">("today")
   const [showOutfitDetail, setShowOutfitDetail] = useState(false)
-  const [notifications, setNotifications] = useState(true)
   const [loading, setLoading] = useState(true)
   const [showPicker, setShowPicker] = useState(false)
   const [appData, setAppData] = useState<AppState | null>(null)
@@ -293,10 +292,7 @@ export default function WeatherApp() {
 
       {activeTab === "settings" && (
         <main className="pt-12">
-          <SettingsView
-            notifications={notifications}
-            onNotificationsChange={setNotifications}
-          />
+          <SettingsView location={appData.location} />
         </main>
       )}
 
