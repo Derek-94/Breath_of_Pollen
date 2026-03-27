@@ -308,7 +308,7 @@ export default function WeatherApp() {
       {activeTab === "settings" && (
         <main>
           <Logo />
-          <SettingsView location={appData.location} />
+          <SettingsView location={appData.location} onLocationChange={() => setShowPicker(true)} />
         </main>
       )}
 
