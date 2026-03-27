@@ -22,16 +22,16 @@ export default function OGImage() {
         }}
       >
         {/* Pollen dots decoration */}
-        <div style={{ display: 'flex', gap: 12, marginBottom: 8 }}>
+        <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
           {['#4ade80', '#facc15', '#fb923c', '#f87171', '#c084fc'].map((color, i) => (
             <div
               key={i}
               style={{
-                width: 18,
-                height: 18,
+                width: 28,
+                height: 28,
                 borderRadius: '50%',
                 background: color,
-                opacity: 0.8,
+                opacity: 0.85,
               }}
             />
           ))}
@@ -49,36 +49,6 @@ export default function OGImage() {
           花粉の呼吸
         </div>
 
-        {/* Tagline */}
-        <div
-          style={{
-            fontSize: 28,
-            color: '#6b7280',
-            fontWeight: 400,
-          }}
-        >
-          天気・花粉・コーデがひと目でわかる
-        </div>
-
-        {/* Feature pills */}
-        <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
-          {['😷 花粉情報', '🌡️ 気温', '🧥 コーデ提案', '📅 週間予報'].map((label) => (
-            <div
-              key={label}
-              style={{
-                padding: '10px 20px',
-                borderRadius: 999,
-                background: '#fff',
-                color: '#374151',
-                fontSize: 22,
-                fontWeight: 500,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-              }}
-            >
-              {label}
-            </div>
-          ))}
-        </div>
       </div>
     ),
     size

@@ -228,11 +228,22 @@ export default function WeatherApp() {
     <div className="min-h-screen bg-background max-w-md mx-auto relative">
       {activeTab === "today" && (
         <main className="pb-24">
-          <header className="px-4 pt-12 pb-6">
-            {/* Service name */}
-            <p className="text-xs font-semibold tracking-widest text-primary/60 uppercase mb-3">
-              花粉の呼吸
-            </p>
+          <header className="px-4 pt-10 pb-6">
+            {/* Service name — centered at top */}
+            <div className="flex flex-col items-center mb-6">
+              <div className="flex gap-2 mb-2">
+                {["#4ade80", "#facc15", "#fb923c", "#f87171", "#c084fc"].map((color) => (
+                  <span
+                    key={color}
+                    style={{ background: color }}
+                    className="w-2.5 h-2.5 rounded-full opacity-80 inline-block"
+                  />
+                ))}
+              </div>
+              <p className="text-base font-semibold tracking-widest text-foreground/80">
+                花粉の呼吸
+              </p>
+            </div>
 
             <div
               className="flex items-center gap-1.5 text-muted-foreground mb-4 cursor-pointer"
