@@ -1,10 +1,16 @@
-# 🌸 花粉の呼吸
+<div align="center">
+
+🟢 🟡 🟠 🔴 🟣
+
+# 花粉の呼吸
 
 [한국어](./README.md) | **日本語**
 
-> 今日の花粉レベルと気温から、最適なコーデを提案する天気アプリ
+今日の花粉レベルと気温から、最適なコーデを提案する天気アプリ
 
-🔗 **ライブデモ:** https://breath-of-pollen.vercel.app
+🔗 **[breath-of-pollen.vercel.app](https://breath-of-pollen.vercel.app)**
+
+</div>
 
 ---
 

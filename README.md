@@ -1,10 +1,16 @@
-# 🌸 花粉の呼吸 (Breath of Pollen)
+<div align="center">
+
+🟢 🟡 🟠 🔴 🟣
+
+# 花粉の呼吸
 
 **한국어** | [日本語](./README.ja.md)
 
-> 오늘의 꽃가루 레벨과 기온으로 최적의 코디를 제안하는 일본 날씨 앱
+오늘의 꽃가루 레벨과 기온으로 최적의 코디를 제안하는 일본 날씨 앱
 
-🔗 **라이브 데모:** https://breath-of-pollen.vercel.app
+🔗 **[breath-of-pollen.vercel.app](https://breath-of-pollen.vercel.app)**
+
+</div>
 
 ---
 
