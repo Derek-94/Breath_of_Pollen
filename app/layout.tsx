@@ -16,7 +16,7 @@ export const viewport: Viewport = {
   themeColor: '#f8f8f6',
 }
 
-const APP_URL = 'https://kafun-no-kokyu.vercel.app'
+const APP_URL = 'https://breath-of-pollen.vercel.app'
 
 export const metadata: Metadata = {
   title: '花粉の呼吸 | 今日の天気・花粉・コーデ',
