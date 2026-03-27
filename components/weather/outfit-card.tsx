@@ -37,14 +37,14 @@ export function OutfitCard({ items, summary, onClick }: OutfitCardProps) {
             }`}
           >
             <span className="text-2xl mb-1">{item.icon}</span>
-            <span className="text-xs text-muted-foreground text-center whitespace-nowrap">
+            <span className="text-xs text-muted-foreground text-center break-all">
               {item.name}
             </span>
           </div>
         ))}
       </div>
       
-      <p className="text-sm text-muted-foreground leading-relaxed">{summary}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed break-words">{summary}</p>
     </Card>
   )
 }
