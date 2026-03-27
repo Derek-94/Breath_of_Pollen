@@ -224,26 +224,29 @@ export default function WeatherApp() {
 
   const uvLabel = getUVLabel(appData.uvIndex)
 
+  const Logo = () => (
+    <div className="flex flex-col items-center pt-10 pb-4">
+      <div className="flex gap-2 mb-2">
+        {["#4ade80", "#facc15", "#fb923c", "#f87171", "#c084fc"].map((color) => (
+          <span
+            key={color}
+            style={{ background: color }}
+            className="w-2.5 h-2.5 rounded-full opacity-80 inline-block"
+          />
+        ))}
+      </div>
+      <p className="text-base font-semibold tracking-widest text-foreground/80">
+        花粉の呼吸
+      </p>
+    </div>
+  )
+
   return (
     <div className="min-h-screen bg-background max-w-md mx-auto relative">
       {activeTab === "today" && (
         <main className="pb-24">
-          <header className="px-4 pt-10 pb-6">
-            {/* Service name — centered at top */}
-            <div className="flex flex-col items-center mb-6">
-              <div className="flex gap-2 mb-2">
-                {["#4ade80", "#facc15", "#fb923c", "#f87171", "#c084fc"].map((color) => (
-                  <span
-                    key={color}
-                    style={{ background: color }}
-                    className="w-2.5 h-2.5 rounded-full opacity-80 inline-block"
-                  />
-                ))}
-              </div>
-              <p className="text-base font-semibold tracking-widest text-foreground/80">
-                花粉の呼吸
-              </p>
-            </div>
+          <header className="px-4 pb-6">
+            <Logo />
 
             <div
               className="flex items-center gap-1.5 text-muted-foreground mb-4 cursor-pointer"
@@ -296,13 +299,15 @@ export default function WeatherApp() {
       )}
 
       {activeTab === "weekly" && (
-        <main className="pt-12">
+        <main>
+          <Logo />
           <WeeklyView forecast={appData.weeklyForecast} />
         </main>
       )}
 
       {activeTab === "settings" && (
-        <main className="pt-12">
+        <main>
+          <Logo />
           <SettingsView location={appData.location} />
         </main>
       )}
