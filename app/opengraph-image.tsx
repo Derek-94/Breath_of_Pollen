@@ -8,6 +8,7 @@ export const contentType = 'image/png'
 export default function OGImage() {
   return new ImageResponse(
     (
+
       <div
         style={{
           background: '#f8f7f4',
@@ -51,6 +52,6 @@ export default function OGImage() {
 
       </div>
     ),
-    size
+    { ...size, headers: { 'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800' } }
   )
 }
