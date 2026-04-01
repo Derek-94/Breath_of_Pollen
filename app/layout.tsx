@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({ 
@@ -65,6 +66,7 @@ export default function RootLayout({
       <body className={`${notoSansJP.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        <GoogleAnalytics gaId="G-LS74E55465" />
       </body>
     </html>
   )
