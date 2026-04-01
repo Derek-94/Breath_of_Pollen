@@ -28,14 +28,6 @@ export const metadata: Metadata = {
     description: '今日の花粉レベルと気温から、最適なコーデを提案。スギ・ヒノキ花粉・天気・服装がひと目でわかる。 / Outfit suggestions based on pollen & weather.',
     url: APP_URL,
     siteName: '花粉の呼吸',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: '花粉の呼吸 - 天気・花粉・コーデアプリ',
-      },
-    ],
     locale: 'ja_JP',
     type: 'website',
   },
@@ -43,7 +35,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '花粉の呼吸',
     description: '今日の花粉レベルと気温から、最適なコーデを提案。 / Outfit tips based on pollen & weather.',
-    images: ['/og-image.png'],
   },
   icons: {
     icon: [
