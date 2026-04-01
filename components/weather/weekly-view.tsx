@@ -15,6 +15,14 @@ interface WeeklyViewProps {
   forecast: DayForecast[]
 }
 
+const pollenLevels: { bg: string; label: string }[] = [
+  { bg: "bg-pollen-1", label: "少ない" },
+  { bg: "bg-pollen-2", label: "やや多い" },
+  { bg: "bg-pollen-3", label: "多い" },
+  { bg: "bg-pollen-4", label: "非常に多い" },
+  { bg: "bg-pollen-5", label: "極めて多い" },
+]
+
 const pollenColors: Record<number, string> = {
   1: "bg-pollen-1",
   2: "bg-pollen-2",
@@ -27,6 +35,18 @@ export function WeeklyView({ forecast }: WeeklyViewProps) {
   return (
     <div className="p-4 space-y-3 pb-24">
       <h2 className="text-lg font-semibold text-foreground mb-4">週間天気予報</h2>
+
+      <div className="rounded-xl bg-muted/50 px-4 py-3 mb-2">
+        <p className="text-xs text-muted-foreground mb-2">花粉レベルの目安</p>
+        <div className="flex flex-wrap gap-x-3 gap-y-1.5">
+          {pollenLevels.map((level) => (
+            <div key={level.label} className="flex items-center gap-1.5">
+              <div className={`w-2.5 h-2.5 rounded-full ${level.bg}`} />
+              <span className="text-xs text-muted-foreground">{level.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
       
       {forecast.map((day, index) => (
         <Card key={index} className="p-4 border-0 shadow-sm">
