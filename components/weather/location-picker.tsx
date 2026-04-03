@@ -29,9 +29,10 @@ const regionIcons: Record<string, string> = {
 interface LocationPickerProps {
   currentLocation?: string
   onSelectLocation: (prefecture: string) => void
+  pollenUnavailable?: boolean
 }
 
-export function LocationPicker({ currentLocation, onSelectLocation }: LocationPickerProps) {
+export function LocationPicker({ currentLocation, onSelectLocation, pollenUnavailable }: LocationPickerProps) {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null)
   const [selectedPrefecture, setSelectedPrefecture] = useState<string | null>(null)
 
@@ -62,10 +63,18 @@ export function LocationPicker({ currentLocation, onSelectLocation }: LocationPi
       >
         <div className="px-4 pt-16 pb-24">
           {/* Header */}
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-2">
             <MapPin className="w-5 h-5 text-primary" />
             <h1 className="text-xl font-semibold text-foreground">場所を選択</h1>
           </div>
+
+          {pollenUnavailable && (
+            <p className="text-xs text-muted-foreground mb-6">
+              花粉データは日本地域のみ対応しています。<br />
+              꽃가루 데이터는 일본 지역만 지원됩니다.
+            </p>
+          )}
+          {!pollenUnavailable && <div className="mb-6" />}
 
           {/* Region Cards */}
           <div className="space-y-2">

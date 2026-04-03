@@ -78,6 +78,7 @@ export default function WeatherApp() {
   const [showOutfitDetail, setShowOutfitDetail] = useState(false)
   const [loading, setLoading] = useState(true)
   const [showPicker, setShowPicker] = useState(false)
+  const [pollenUnavailable, setPollenUnavailable] = useState(false)
   const [appData, setAppData] = useState<AppState | null>(null)
 
   const fetchWeatherData = useCallback(async (lat: number, lon: number, locationName?: string) => {
@@ -110,6 +111,11 @@ export default function WeatherApp() {
       const weatherInfo = getWeatherInfo(currentCode)
 
       // Pollen
+      if (!pollen.dailyInfo || pollen.dailyInfo.length === 0) {
+        setPollenUnavailable(true)
+        setShowPicker(true)
+        return
+      }
       const todayPlants: PlantInfo[] = pollen.dailyInfo?.[0]?.plantInfo ?? []
       const cedarLevel = findPlantLevel(todayPlants, "JAPANESE_CEDAR")
       const cypressLevel = findPlantLevel(todayPlants, "JAPANESE_CYPRESS")
@@ -216,6 +222,7 @@ export default function WeatherApp() {
       <LocationPicker
         currentLocation={appData?.location}
         onSelectLocation={handlePrefectureSelect}
+        pollenUnavailable={pollenUnavailable}
       />
     )
   }
