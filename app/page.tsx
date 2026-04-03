@@ -111,7 +111,7 @@ export default function WeatherApp() {
       const weatherInfo = getWeatherInfo(currentCode)
 
       // Pollen
-      if (!pollen.dailyInfo || pollen.dailyInfo.length === 0) {
+      if (pollen.regionCode !== "JP") {
         setPollenUnavailable(true)
         setShowPicker(true)
         return
