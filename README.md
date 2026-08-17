@@ -67,6 +67,7 @@ npm install
 
 ```bash
 GOOGLE_POLLEN_API_KEY=your_api_key_here
+KMA_API_KEY=your_kma_api_key_here
 ```
 
 Google Pollen API 키 발급 방법:
@@ -90,6 +91,8 @@ http://localhost:3000 에서 확인
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Derek-94/Breath_of_Pollen)
 
 Vercel 배포 시 Environment Variables에 `GOOGLE_POLLEN_API_KEY`를 반드시 추가해야 합니다.
+한국 꽃가루 API를 사용하려면 `KMA_API_KEY`도 서버 전용 환경 변수로 추가해야 합니다.
+두 키 모두 `NEXT_PUBLIC_` 접두사를 사용하지 않습니다.
 
 ---
 
@@ -100,6 +103,8 @@ Vercel 배포 시 Environment Variables에 `GOOGLE_POLLEN_API_KEY`를 반드시 
 │   ├── api/
 │   │   ├── weather/     # Open-Meteo 날씨 API 프록시
 │   │   ├── pollen/      # Google Pollen API 프록시
+│   │   ├── pollen-kr/   # 기상청 한국 꽃가루 API 프록시
+│   │   ├── widget/      # iOS/Android 위젯 통합 데이터
 │   │   └── location/    # Nominatim 역지오코딩 프록시
 │   ├── opengraph-image.tsx  # 동적 OG 이미지 생성
 │   ├── layout.tsx
@@ -113,6 +118,7 @@ Vercel 배포 시 Environment Variables에 `GOOGLE_POLLEN_API_KEY`를 반드시 
 │       ├── weekly-view.tsx      # 주간 예보
 │       └── ...
 └── lib/
+    ├── server/                # API 검증, KMA 시간·응답 변환
     ├── weather-utils.ts         # 날씨 코드 변환, 코디 로직
     └── prefecture-coords.ts     # 47도도부현 좌표 데이터
 ```
